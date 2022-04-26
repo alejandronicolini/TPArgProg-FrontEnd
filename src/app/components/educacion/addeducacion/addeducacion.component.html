@@ -1,0 +1,84 @@
+<div class="container col-md-8">
+    <div class="card">
+        <div class="card-header">
+            <h3>Agregar Estudios de la Persona</h3>
+        </div>
+        <div class="card-body">
+            <form action="">
+                <div class="form-group">
+                    <label for="">Nombre de la institucion</label>
+                    <input [(ngModel)]="educacion.institucion" name="institucion" type="text" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="">Titulo</label>
+                    <input [(ngModel)]="educacion.titulo" name="titulo" type="text" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="">Año de ingreso</label>
+                    <input [(ngModel)]="educacion.fecha_inicio" name="fecha_inicio" type="number" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="">Año de egreso</label>
+                    <input [(ngModel)]="educacion.fecha_fin" name="fecha_fin" type="number" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="">Direccion Web del Logotipo</label>
+                    <input [(ngModel)]="educacion.img_logo" name="web_logo" type="text" class="form-control" placeholder="ingreso manual o elija uno de la lista desplegable">
+                    
+                    <select class="form-select" aria-label="Default select example" name="web_logo" type="text" [(ngModel)]="educacion.img_logo">
+                        <option value="" selected disabled>lista de logos disponibles</option>
+                        <option value="../../../../assets/imagenes/imagen camara.png">Sin Logotipo</option>
+                        <option value="../../../../assets/imagenes/educacion/logo cursos.png">Logotipo curso (generico)</option>
+                        <option value="../../../../assets/imagenes/educacion/logo univ.png">Logotipo Universidad (generico)</option>
+                        <option value="../../../../assets/imagenes/educacion/logo unmdp.jpg">Logotipo Universidad Mar del Plata</option>
+                        <option value="../../../../assets/imagenes/educacion/logo EET3.png">Logotipo Escuela Tecnica</option>
+                        <option value="../../../../assets/imagenes/educacion/logo arg programa.jpg">Logotipo Arg Programa</option>
+                        <option value="../../../../assets/imagenes/educacion/logo codo a codo.jpg">Logotipo Codo a coco</option>
+                        <option value="../../../../assets/imagenes/educacion/logo accenture.png">Logotipo Accenture</option>
+                        <option value="../../../../assets/imagenes/educacion/logo ces testing.png">Logotipo CES Testing</option>
+                    </select>
+                </div>
+                <br>
+                <img src="{{educacion.img_logo}}" class="border float-end" height="150em" alt="">
+
+                <button (click)="Guardar()" class="btn btn-primary">Guardar</button>
+                <button (click)="Cancelar()" class="btn btn-danger">Cancelar</button>
+                
+                <!-- {{educacion.img_logo}} -->
+                
+                <!-- <div class="col-md-12">
+                    <label for="educacion.img_logo" class="form-label">Direccion Web del Logotipo</label>
+                    <select id="educacion.img_logo" class="form-select">
+                        <option selected>Choose...</option>
+                        <option
+                            value="https://geodis.com/mx/sites/default/files/styles/max_800x800/public/2018-06/404.png?itok=-0gM8yNq">
+                            Not found</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div> -->
+
+                <!-- <label for="educacion.img_logo">Elegi un Logotipo:</label>
+                <select id="educacion.img_logo" name="educacion.img_logo" size="1">
+                    <option
+                        value="https://geodis.com/mx/sites/default/files/styles/max_800x800/public/2018-06/404.png?itok=-0gM8yNq"
+                        selected>Foto</option>
+                    <option educacion.img_logo(loadeddata)="../../../../assets/imagenes/educacion/logo univ2.png">
+                        Universidad</option>
+                    <option value="../../../../assets/imagenes/educacion/logo cursos.png">Curso</option>
+                    <option value="../../../../assets/imagenes/educacion/logo arg programa.jpg">Curso Arg Prog</option>
+                </select> -->
+                <!-- <img src="../../../../assets/imagenes/educacion/logo arg programa.jpg" alt=""> -->
+
+                <!-- <label for="educacion.img_logo">Select a file:</label>
+                <input type="file" id="educacion.img_logo" name="myfile"> -->
+
+
+            </form>
+        </div>
+    </div>
+</div>

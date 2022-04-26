@@ -1,0 +1,17 @@
+[{
+    "id_proyecto": 1,
+    "nombre": "Avram",
+    "descripcion": "Information Systems Manager"
+  }, {
+    "id_proyecto": 2,
+    "nombre": "Eduard",
+    "descripcion": "Developer II"
+  }, {
+    "id_proyecto": 3,
+    "nombre": "Dody",
+    "descripcion": "Clinical Specialist"
+  }, {
+    "id_proyecto": 4,
+    "nombre": "Janette",
+    "descripcion": "Software Test Engineer II"
+  }]

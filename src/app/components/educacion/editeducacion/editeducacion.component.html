@@ -1,0 +1,53 @@
+<div class="container col-md-8">
+    <div class="card">
+        <div class="card-header">
+            <h3>Modificar Datos de Educacion</h3>
+        </div>
+        <div class="card-body">
+            <form action="">
+                <div class="form-group">
+                    <label for="">Nombre de la institucion</label>
+                    <input [(ngModel)]="educacion.institucion" name="institucion" type="text" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="">Titulo</label>
+                    <input [(ngModel)]="educacion.titulo" name="titulo" type="text" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="">Año de ingreso</label>
+                    <input [(ngModel)]="educacion.fecha_inicio" name="fecha_inicio" type="number" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="">Año de egreso</label>
+                    <input [(ngModel)]="educacion.fecha_fin" name="fecha_fin" type="number" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="">Direccion Web del Logotipo</label>
+                    <input [(ngModel)]="educacion.img_logo" name="web_logo" type="text" class="form-control" placeholder="ingreso manual o elija uno de la lista desplegable">
+                    
+                    <select class="form-select" aria-label="Default select example" name="web_logo" type="text" [(ngModel)]="educacion.img_logo">
+                        <option value= "" selected disabled>lista de logos disponibles</option>
+                        <option value="../../../../assets/imagenes/imagen camara.png">Sin Logotipo</option>
+                        <option value="../../../../assets/imagenes/educacion/logo cursos.png">Logotipo curso (generico)</option>
+                        <option value="../../../../assets/imagenes/educacion/logo univ.png">Logotipo Universidad (generico)</option>
+                        <option value="../../../../assets/imagenes/educacion/logo unmdp.jpg">Logotipo Universidad Mar del Plata</option>
+                        <option value="../../../../assets/imagenes/educacion/logo EET3.png">Logotipo Escuela Tecnica</option>
+                        <option value="../../../../assets/imagenes/educacion/logo arg programa.jpg">Logotipo Arg Programa</option>
+                        <option value="../../../../assets/imagenes/educacion/logo codo a codo.jpg">Logotipo Codo a coco</option>
+                        <option value="../../../../assets/imagenes/educacion/logo accenture.png">Logotipo Accenture</option>
+                        <option value="../../../../assets/imagenes/educacion/logo ces testing.png">Logotipo CES Testing</option>
+                    </select>
+                </div>
+                <br>
+                <img src="{{educacion.img_logo}}" class="border float-end" height="150em" alt="">
+
+                <button (click)="Actualizar(educacion)" class="btn btn-primary">Guardar</button>
+                <button (click)="Cancelar()" class="btn btn-danger">Cancelar</button>
+            </form>
+        </div>
+    </div>
+</div>

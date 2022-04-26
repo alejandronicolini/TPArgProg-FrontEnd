@@ -1,0 +1,16 @@
+{
+    "id_infoPersonal": 1,
+    "fechaNacimiento": "1995-12-12",
+    "edad": 36,
+    "domicilio": "calle falsa 123",
+    "telefono": "123456789",
+    "puesto_actual": "programador",
+    "acerca_de": "persona muy inteligenteeeee",
+    "twitter":"https://twitter.com/alenicolini139",
+    "facebook":"https://www.facebook.com",
+    "linkedin":"https://www.linkedin.com/in/alejandro-nicolini/",
+    "github":"https://github.com/alejandronicolini",
+    "instagram":"https://www.instagram.com/alenicolini139/",
+    "blog":"http://anrenders.blogspot.com/"
+
+  }

@@ -1,0 +1,86 @@
+<div class="container col-md-6">
+    <div class="card">
+        <div class="card-header">
+            <h3>Modificar datos de Información Personal</h3>
+        </div>
+        <div class="card-body">
+            <form action="">
+                <div class="row g-3">
+                    <div class="col form-group">
+                        <label for="">fecha de Nacimiento</label>
+                        <input [(ngModel)]="infoPersonal.fechaNacimiento" name="fechaNacimiento" type="text"
+                            class="form-control">
+                    </div>
+
+                    <div class="col-sm-4 form-group">
+                        <label for="">Edad</label>
+                        <input [(ngModel)]="infoPersonal.edad" name="edad" type="text" class="form-control">
+                    </div>
+                </div>
+
+                <div class="row g-3">
+                    <div class="col form-group">
+                        <label for="">Domicilio</label>
+                        <input [(ngModel)]="infoPersonal.domicilio" name="domicilio" type="text" class="form-control">
+                    </div>
+
+                    <div class="col-sm-4 form-group">
+                        <label for="">Telefono</label>
+                        <input [(ngModel)]="infoPersonal.telefono" name="telefono" type="text" class="form-control">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="">Url de Twitter</label>
+                    <input [(ngModel)]="infoPersonal.twitter" name="twitter" type="text" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="">Url de Facebook</label>
+                    <input [(ngModel)]="infoPersonal.facebook" name="facebook" type="text" class="form-control">
+                </div>
+
+
+
+                <div class="form-group">
+                    <label for="">Url de LinkedIn</label>
+                    <input [(ngModel)]="infoPersonal.linkedin" name="linkedin" type="text" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="">Url de Github</label>
+                    <input [(ngModel)]="infoPersonal.github" name="github" type="text" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="">Url de Instagram</label>
+                    <input [(ngModel)]="infoPersonal.instagram" name="instagram" type="text" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="">Url del blog</label>
+                    <input [(ngModel)]="infoPersonal.blog" name="blog" type="text" class="form-control">
+                </div>
+
+
+               <!--  <div class="form-group">
+                    <label for="blog">Add your homepage:</label>
+                    <input [(ngModel)]="infoPersonal.blog" type="url" id="blog" name="blog">
+                </div> -->
+
+
+
+                <div class="form-group">
+                    <label for="">Descripcion personal (acerca de)</label>
+                    <textarea [(ngModel)]="infoPersonal.acerca_de" name="acerca_de" rows="10"
+                        class="form-control"></textarea>
+                </div>
+
+
+                <button (click)="Actualizar(infoPersonal)" class="btn btn-primary">Guardar</button>
+                <button (click)="Cancelar()" class="btn btn-danger">Cancelar</button>
+
+            </form>
+        </div>
+    </div>
+</div>

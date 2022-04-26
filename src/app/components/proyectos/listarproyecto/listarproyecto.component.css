@@ -1,0 +1,30 @@
+.proyectos h4 {
+    color: rgb(34, 109, 170);
+    font-size: large;    
+}
+.proyectos p {
+    color: #6C6C6C;
+    font-size: small;
+}
+
+div.achivements {
+    display: flex;
+    position: relative;
+    padding: 16px 0 0 12px;
+}
+div.achivements h3 {
+    color: #0a66c2;
+    min-width: 64px;
+    text-align: right;
+    line-height: 36px;
+    margin-top: -3px;
+    padding-right: 12px;
+    font-size: 2rem;
+}
+div.achivements .project-title h3 {
+    font-size: 1.4rem;
+    text-align: center;
+}
+/* div.achivements ul.project-list li {
+    display: inline;
+} */

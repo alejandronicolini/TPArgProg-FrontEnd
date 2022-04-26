@@ -1,0 +1,43 @@
+<div class="container col-md-8">
+    <div class="card">
+        <div class="card-header">
+            <h3>Agregar Habilidad</h3>
+        </div>
+        <div class="card-body">
+            <form action="">
+                <div class="form-group">
+                    <label for="">Nombre de la Habilidad</label>
+                    <input [(ngModel)]="habilidad.habilidad" name="habilidad" type="text" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="">Porcentaje de conocimiento (0% - 100%) </label>
+                    <input [(ngModel)]="habilidad.conocimiento" name="conocimiento" type="number" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="">Direccion Web del Logotipo</label>
+                    <input [(ngModel)]="habilidad.img_logo" name="web_logo" type="text" class="form-control" placeholder="ingreso manual o elija uno de la lista desplegable">
+                    
+                    <select class="form-select" aria-label="Default select example" name="web_logo" type="text" [(ngModel)]="habilidad.img_logo">
+                        <option value="" selected disabled>lista de logos disponibles</option>
+                        <option value="../../../../assets/imagenes/imagen camara.png">Sin Logotipo</option>
+                        <option value="../../../../assets/imagenes/tecnologia/Java logo2.png">Java</option>
+                        <option value="../../../../assets/imagenes/tecnologia/HTML5-CSS3-logos.png">HTML5-CSS</option>
+                        <option value="../../../../assets/imagenes/tecnologia/JavaScript logo.png">JavaScript</option>
+                        <option value="../../../../assets/imagenes/tecnologia/ruby logo.png">Ruby</option>
+                        <option value="../../../../assets/imagenes/tecnologia/python logo.png">Python</option>
+                        <option value="../../../../assets/imagenes/tecnologia/c++ logo.png">C++</option>
+                        <option value="../../../../assets/imagenes/tecnologia/Go logo.png">Go</option>
+                        <option value="../../../../assets/imagenes/tecnologia/MySQL-MariaDB-Logos.png">MySql</option>
+                    </select>
+                </div>
+                <br>
+                <img src="{{habilidad.img_logo}}" class="border float-end" height="150em" alt="">
+
+                <button (click)="Guardar()" class="btn btn-primary">Guardar</button>
+                <button (click)="Cancelar()" class="btn btn-danger">Cancelar</button>
+            </form>
+        </div>
+    </div>
+</div>

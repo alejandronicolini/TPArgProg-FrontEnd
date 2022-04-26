@@ -1,0 +1,47 @@
+<div class="container col-md-8">
+    <div class="card">
+        <div class="card-header">
+            <h3>Agregar Experiencia Laboral</h3>
+        </div>
+        <div class="card-body">
+            <form action="">
+                <div class="form-group">
+                    <label for="">Cargo/Puesto en la Empresa</label>
+                    <input [(ngModel)]="expLab.puesto" name="puesto" type="text" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="">Nombre de la Empresa </label>
+                    <input [(ngModel)]="expLab.empresa" name="empresa" type="text" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="">Año de inicio en la Empresa</label>
+                    <input [(ngModel)]="expLab.fecha_inicio" name="fecha_inicio" type="number" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="">Año de finalizacion en la Empresa</label>
+                    <input [(ngModel)]="expLab.fecha_fin" name="fecha_fin" type="number" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="">Direccion Web del Logotipo de la Empresa</label>
+                    <input [(ngModel)]="expLab.img_logo" name="web_logo" type="text" class="form-control" placeholder="ingreso manual o elija uno de la lista desplegable">
+                    
+                    <select class="form-select" aria-label="Default select example" name="web_logo" type="text" [(ngModel)]="expLab.img_logo">
+                        <option value= "" selected disabled>lista de logos disponibles</option>
+                        <option value="../../../../assets/imagenes/imagen camara.png">Sin Logotipo</option>
+                        <option value="../../../../assets/imagenes/proyecto web.jpg">Logotipo (generico)</option>
+                    </select>
+                </div>
+                <br>
+                <img src="{{expLab.img_logo}}" class="border float-end" height="150em" alt="">
+
+
+                <button (click)="Guardar()" class="btn btn-primary">Guardar</button>
+                <button (click)="Cancelar()" class="btn btn-danger">Cancelar</button>
+            </form>
+        </div>
+    </div>
+</div>

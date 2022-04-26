@@ -1,0 +1,46 @@
+<div id="education">
+  <div class="card-titles">
+    <h2>Educación</h2><span><small class="text-muted">drag and drop</small></span>
+    <div class="btn-edit" *ngIf="visible">
+      <!-- <a href="/add-educacion" class="btn-right"><i class="fa fa-plus" ></i></a> -->
+      <!-- <a class="btn-right" routerLink="/add-educacion"><i class="fas fa-plus-circle fa-2x"></i></a> -->
+      <button type="button" class="btn-right btn btn-link " (click)="Nuevo()" data-bs-placement="top" title="Agregar"><i
+          class="fas fa-plus-circle fa-2x"></i></button>
+    </div>
+  </div>
+
+  <div class="list-group" cdkDropList (cdkDropListDropped)="onDropped($event)">
+
+    <div *ngFor="let elemEduc of listaEducacion" class="card mb-3 border-1 rounded-3" cdkDrag>
+      <div class="row g-0">
+        <div class="col-md-2">
+          <img src="{{elemEduc.img_logo}}" class="img-fluid rounded-start mx-auto" alt="">
+        </div>
+
+
+        <div class="col-md-9">
+          <div class="card-body">
+            <h5 class="card-title">{{elemEduc.institucion}}</h5>
+            <p class="card-text">{{elemEduc.titulo}}</p>
+            <p class="card-text"><small class="text-muted">{{elemEduc.fecha_inicio}} - {{elemEduc.fecha_fin}}</small>
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-1 row justify-content-end" *ngIf="visible">
+          <button type="button" class="btn btn-link" (click)="Editar(elemEduc)" data-bs-placement="top"
+            title="Editar"><i class="fa fa-pen"></i></button>
+          <button type="button" class="btn btn-link" (click)="Delete(elemEduc)" data-bs-placement="top"
+            title="Eliminar"><i class="fa-solid fa-trash-can"></i></button>
+
+          <!-- boton con routerLink -->
+          <!-- <button type="button" class="btn btn-link" routerLink="/editar-educacion/{{elemEduc.id_educacion}}" data-bs-placement="top" title="Editar"><i class="fa fa-pen"></i></button> -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>

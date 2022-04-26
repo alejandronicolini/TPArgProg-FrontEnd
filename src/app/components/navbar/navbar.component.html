@@ -1,0 +1,97 @@
+<nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-black">
+  <div class="container-fluid">
+
+    <h2><a class="navbar-brand" href="#">Sr. {{persona.nombre}} {{persona.apellido}}</a></h2>
+
+
+    <button class="navbar-toggler bg-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="row justify-content-end">
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+
+
+          <li class="nav-item">
+            <a class="nav-link" href="{{infoPersonal.github}}" target="_blank">
+              <i class="fa-brands fa-github fa-2x"></i>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="https://drive.google.com/drive/folders/1TCJl9nO8oKTZcPKgzWCsAE-rOQBil3CZ?usp=sharing" target="_blank">
+              <i class="fa-brands fa-google-drive fa-2x"></i>
+            </a>
+          <li class="nav-item">
+            <a class="nav-link" href="{{infoPersonal.linkedin}}" target="_blank">
+              <i class="fa-brands fa-linkedin fa-2x"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{infoPersonal.blog}}" target="_blank">
+              <i class="fa-solid fa-globe fa-2x"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{infoPersonal.facebook}}" target="_blank">
+              <i class="grey-text fab fa-facebook-square fa-2x"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{infoPersonal.instagram}}" target="_blank">
+              <i class="grey-text fab fa-instagram fa-2x"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{infoPersonal.twitter}}" target="_blank">
+              <i class="grey-text fab fa-twitter fa-2x"></i>
+            </a>
+          </li>
+
+
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="https://github.com/alejandronicolini" target="_blank">
+              <i class="fa-brands fa-github fa-2x"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.linkedin.com/in/alejandro-nicolini/" target="_blank">
+              <i class="fa-brands fa-linkedin fa-2x"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://anrenders.blogspot.com/" target="_blank">
+              <i class="fa-solid fa-globe fa-2x"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.facebook.com" target="_blank">
+              <i class="grey-text fab fa-facebook-square fa-2x"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.instagram.com/alenicolini139/" target="_blank">
+              <i class="grey-text fab fa-instagram fa-2x"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://twitter.com/alenicolini139" target="_blank">
+              <i class="grey-text fab fa-twitter fa-2x"></i>
+            </a>
+          </li> -->
+
+
+        </ul>
+
+        <form class="form-inline my-2 my-lg-0">
+          <button class="btn btn-outline-success my-2 my-sm-0" (click)="login()" *ngIf="!visible">Login</button>
+          <button class="btn btn-outline-warning my-2 my-sm-0" (click)="logout()" *ngIf="visible">Logout</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</nav>

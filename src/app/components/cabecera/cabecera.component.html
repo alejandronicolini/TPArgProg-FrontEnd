@@ -1,0 +1,74 @@
+<div class="card mat-card">
+  <div><img id="img_portada" src="../../../assets/imagenes/fondo.jpg"></div>
+  <div id="sesion">Sesion: {{sesion}}</div>
+
+  <div class="secciones">
+
+    <div id="foto-perfil">
+      <img class="imagen-perfil" src="../../../assets/imagenes/foto perfil.jpg">
+
+      <div class="btn-edit">
+        <!-- <a href=""   (click)="Editar(persona)"><i class="fa fa-pen"></i></a> -->
+        <button type="button" class="btn btn-link" (click)="Editar(persona)" *ngIf="visible"><i
+            class="fa fa-pen"></i></button>
+            <div *ngIf="!visible">
+              <br>
+            </div>
+      </div>
+
+    </div>
+
+    <div id="info-data">
+      <div>
+        <h1>{{persona.nombre}} {{persona.apellido}}</h1>
+        <h5>{{infoPersonal.puesto_actual}}</h5>
+        <div id="info-contact">
+          <span>Buenos Aires (Argentina) </span>
+          <span><a href="#">Información de contacto</a></span>
+        </div>
+      </div>
+
+
+      <ul id="info-details">
+        <li><a href="#">
+            <img id="info-company-img"            
+              src="https://convocatorias.conicet.gov.ar/wp-content/uploads/logo-CONICET_opt.png">
+            <h2 id="info-company-name">ORGANIZACION</h2>
+          </a>
+        </li>
+        <li><a href="#">
+            <img id="info-school-img" src="https://inerciacero.files.wordpress.com/2011/07/logo-uba.png">
+            <h2 id="info-school-name">Nombre de la Universidad</h2>
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+
+    <div id="btn-group">
+      <button type="button" class="btn btn-outline-primary">Tengo interés en</button>
+
+      <button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown"
+        aria-expanded="false" data-bs-placement="top" title="Agregar Información">
+        Añadir Info
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="/add-experiencia">Experiencia</a></li>
+        <li><a class="dropdown-item" href="/add-educacion">Educacion</a></li>
+        <li><a class="dropdown-item" href="/add-proyecto">Proyectos</a></li>
+        <li><a class="dropdown-item" href="/add-habilidad">Habilidades</a></li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+        <li><a class="dropdown-item" href="/infopersonal">Editar Datos Personales</a></li>
+      </ul>
+
+      <!-- <button type="button" class="btn btn-outline-primary">Añadir Sección</button>
+      <button type="button" class="btn btn-outline-primary">Más</button> -->
+
+
+    </div>
+
+  </div>
+</div>

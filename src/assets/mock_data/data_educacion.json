@@ -1,0 +1,27 @@
+[
+    {
+      "id_educacion": 1,
+      "institucion": "Univ. nac mdP",
+      "titulo": "Arquitectura",
+      "fecha_inicio": "2012",
+      "fecha_fin": "2020",
+      "img_logo": "https://docs.angular.lat/assets/images/logos/angular/logo-nav@2x.png"
+    },
+    {
+      "id_educacion": 2,
+      "institucion": "asa",
+      "titulo": "asa",
+      "fecha_inicio": "2000",
+      "fecha_fin": "2015",
+      "img_logo": "https://static9.depositphotos.com/1654391/1145/v/950/depositphotos_11458222-stock-illustration-shields.jpg"
+    },
+    {
+      "id_educacion": 3,
+      "institucion": "ewr",
+      "titulo": "wer",
+      "periodo": "1111",
+      "fecha_inicio": "2010",
+      "fecha_fin": "2015",
+      "img_logo": "https://static8.depositphotos.com/1000448/862/v/950/depositphotos_8627182-stock-illustration-shield-symbol.jpg"
+    }
+  ]

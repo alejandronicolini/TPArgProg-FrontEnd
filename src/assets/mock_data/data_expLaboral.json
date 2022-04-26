@@ -1,0 +1,29 @@
+[{
+    "id_expLaboral": 1,
+    "puesto": "Developer II",
+    "empresa": "Feedfish",
+    "fecha_inicio": 2001,
+    "fecha_fin": 2018,
+    "img_logo": "http://dummyimage.com/172x100.png/dddddd/000000"
+  }, {
+    "id_expLaboral": 2,
+    "puesto": "Research Nurse",
+    "empresa": "Dynava",
+    "fecha_inicio": 2010,
+    "fecha_fin": 2017,
+    "img_logo": "http://dummyimage.com/156x100.png/5fa2dd/ffffff"
+  }, {
+    "id_expLaboral": 3,
+    "puesto": "Associate Professor",
+    "empresa": "Meeveo",
+    "fecha_inicio": 2004,
+    "fecha_fin": 2021,
+    "img_logo": "http://dummyimage.com/158x100.png/5fa2dd/ffffff"
+  }, {
+    "id_expLaboral": 4,
+    "puesto": "Graphic Designer",
+    "empresa": "Devbug",
+    "fecha_inicio": 2008,
+    "fecha_fin": 2018,
+    "img_logo": "http://dummyimage.com/173x100.png/cc0000/ffffff"
+  }]

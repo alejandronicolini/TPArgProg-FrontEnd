@@ -1,0 +1,17 @@
+[{
+    "id_habilidad": 1,
+    "habilidad": "lenguaje Java",
+    "conocimiento": "25"
+  }, {
+    "id_habilidad": 2,
+    "habilidad": "HTML - CSS- JS",
+    "conocimiento": "50"
+  }, {
+    "id_habilidad": 3,
+    "habilidad": "MySQL",
+    "conocimiento": "75"
+  }, {
+    "id_habilidad": 4,
+    "habilidad": "Angular",
+    "conocimiento": "40"
+  }]

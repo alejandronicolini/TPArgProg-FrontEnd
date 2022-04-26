@@ -1,0 +1,12 @@
+<div class="card mat-card">
+    <div class="card-titles">
+      <h2>Acerca de</h2>
+      <!-- <div class="btn-edit"><a href="#" class="btn-right" (click)="Editar(infoPersonal)"><i class="fa fa-pen" ></i></a>
+      </div> -->
+      <!-- <button (click)="Editar(infoPersonal)" class="btn btn-warning">Editar</button> -->
+      <button type="button" class="btn btn-link" (click)="Editar(infoPersonal)" *ngIf="visible"><i class="fa fa-pen"></i></button>
+    </div>
+    <div id="about">
+      <h5>{{infoPersonal.acerca_de}}</h5>
+    </div>
+  </div>

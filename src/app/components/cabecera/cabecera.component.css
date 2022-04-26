@@ -1,0 +1,94 @@
+.mat-card{
+    padding: 0%;
+    background-color: rgb(188, 223, 223);
+}
+#img_portada {
+    display: flex;
+    width: 100%;
+    border-radius: 2em 2em 0 0;
+   
+}
+.imagen-perfil {
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    margin-top: -110px;
+    z-index: 1;
+}
+.secciones {
+    padding: 1em;
+    
+}
+#info-data {
+    display: flex;
+    justify-content: space-between;
+}
+
+#sesion {
+    display: inline-block;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    z-index: 2;
+    color: rgb(230, 199, 22);
+}
+
+#info-contact a {
+    color: #0a66c2;
+    touch-action: manipulation;
+    text-decoration: none;
+}
+
+#info-contact span {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 1.8rem;
+    display: inline;
+    font-weight: 500;
+    line-height: 1.25;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+#info-details {
+    width: 30%;
+    list-style: none;
+    flex-shrink: 0;
+}
+#info-details li a {
+    color: black;
+    display: flex;
+    text-decoration: none;
+}
+#info-details li a h2 {
+    font-size: 1rem;
+    font-weight: 500;
+    align-self: center;
+    vertical-align: baseline;
+}
+
+div#info-data ul#info-details li a img {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+}
+.btn-right {
+    display: flex;
+    align-self:center;
+}
+#btn-group {
+    display: flex;
+    margin-right: 8px;
+ }
+#btn-group button {
+    margin-top: 0.5em;
+     margin-left: 1em;
+ }
+
+ div#info-company {
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
