@@ -4,6 +4,7 @@ import { InfoPersonal } from 'src/app/Modelo/InfoPersonal';
 import { Persona } from 'src/app/Modelo/Persona';
 import { InfopersonalService } from 'src/app/Service/infopersonal.service';
 import { PersonaService } from 'src/app/Service/persona.service';
+import { TokenService } from 'src/app/Service/token.service';
 
 @Component({
   selector: 'app-cabecera',
@@ -14,11 +15,10 @@ export class CabeceraComponent implements OnInit {
 
   persona:Persona;
   infoPersonal:InfoPersonal;
-  usuario: string;
-  visible: boolean;
-  sesion:string;
+  sesion: string= "invitado";
+  visible: boolean = false;
   
-  constructor(private persoService:PersonaService, private infoPersonalService: InfopersonalService, private router:Router) { }
+  constructor(private persoService:PersonaService, private infoPersonalService: InfopersonalService, private router:Router, private tokenService: TokenService) { }
 
   ngOnInit(): void {
     this.persoService.getPersonaId()
@@ -31,15 +31,16 @@ export class CabeceraComponent implements OnInit {
       this.infoPersonal = data;
     })
 
-    this.usuario = localStorage.getItem("user");
+    this.visible = this.tokenService.isAdmin();
+    this.sesion= this.tokenService.isAdmin()? 'admin' : 'invitado';
 
+    //login previo
+      /* this.usuario = localStorage.getItem("user");
       if (this.usuario == "admin") {
         this.visible = true;
-        this.sesion = "admin";
       } else {
         this.visible = false;
-        this.sesion = "invitado";
-      }
+      } */
 
   }
 

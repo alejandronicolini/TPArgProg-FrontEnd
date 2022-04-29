@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Habilidades } from '../Modelo/Habilidades';
 
 @Injectable({
@@ -8,11 +9,11 @@ import { Habilidades } from '../Modelo/Habilidades';
 })
 export class HabilidadService {
   
-   constructor(private http:HttpClient) { }
+  //ruta del backend
+  Url= environment.tpUrl+"habilidades";
+  //Url='http://localhost:8080/habilidades';//ruta del proyecto backend en Java
   
-   //ruta del backend
-   Url='http://localhost:8080/habilidades';//ruta del proyecto backend en Java
-   
+  constructor(private http:HttpClient) { }
    
    getlistaHabilidades(){
      return this.http.get<Habilidades[]>(this.Url+"/listado");

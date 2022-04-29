@@ -1,3 +1,4 @@
+import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -8,13 +9,11 @@ import { Proyectos } from '../Modelo/Proyectos';
 })
 export class ProyectoService {
 
-  //definimos en el constructor el HttpClient para conectarnos al backend por REST(web service)
-  constructor(private http:HttpClient) { }
-  
   //ruta del backend
-  Url='http://localhost:8080/proyectos';//ruta del proyecto backend en Java
+  Url= environment.tpUrl+"proyectos";
+  //Url='http://localhost:8080/proyectos';
   
-  // metodo para obtener datos de las personas del backend
+  constructor(private http:HttpClient) { }
   
   getlistaProyectos(){
     return this.http.get<Proyectos[]>(this.Url+"/listado");

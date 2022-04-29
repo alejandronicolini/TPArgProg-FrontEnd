@@ -1,18 +1,19 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { InfoPersonal } from '../Modelo/InfoPersonal';
 
 @Injectable({
   providedIn: 'root'
 })
 export class InfopersonalService {
-
-  constructor(private http: HttpClient) { }
   
   //ruta del backend
-  Url = 'http://localhost:8080/info_personal';//ruta del proyecto backend en Java
-
+  Url= environment.tpUrl+"info_personal";
+  //Url = 'http://localhost:8080/info_personal';//ruta del proyecto backend en Java
+  
+  constructor(private http: HttpClient) { }
  
    getInfoPersonalId(id: number): Observable<InfoPersonal> {
     return this.http.get<InfoPersonal>(`${this.Url}/${id}`);

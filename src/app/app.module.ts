@@ -4,6 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
+//Service
+import { PersonaService } from './Service/persona.service';
+import { EducacionService } from './Service/educacion.service';
+import { ProyectoService } from './Service/proyecto.service';
+import { HabilidadService } from './Service/habilidad.service';
+import { ExperiencialaboralService } from './Service/experiencialaboral.service';
+import { InfopersonalService } from './Service/infopersonal.service';
+
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { MainComponent } from './main/main.component';
@@ -23,17 +31,12 @@ import { EditexperienciaComponent } from './components/experiencia/editexperienc
 import { ListarexperienciaComponent } from './components/experiencia/listarexperiencia/listarexperiencia.component';
 import { EditpersonaComponent } from './components/persona/editpersona/editpersona.component';
 import { InfopersonalComponent } from './components/persona/infopersonal/infopersonal.component';
-import { LoginComponent } from './components/login/login.component';
-
-//Service
-import { PersonaService } from './Service/persona.service';
-import { EducacionService } from './Service/educacion.service';
-import { ProyectoService } from './Service/proyecto.service';
-import { HabilidadService } from './Service/habilidad.service';
-import { ExperiencialaboralService } from './Service/experiencialaboral.service';
-import { InfopersonalService } from './Service/infopersonal.service';
-import { IniciarSesionComponent } from './components/iniciar-sesion/iniciar-sesion.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+
+import { UsuariologinComponent } from './authentication/usuariologin.component';
+import { RegistroComponent } from './authentication/registro.component';
+import { interceptorProvider } from './interceptors/educ-interceptor.service';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -56,8 +59,9 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     ListarexperienciaComponent,
     EditpersonaComponent,
     InfopersonalComponent,
-    LoginComponent,
-    IniciarSesionComponent,
+    UsuariologinComponent,
+    RegistroComponent,
+    FooterComponent,
   ],
 
   imports: [
@@ -65,9 +69,9 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    DragDropModule
+    DragDropModule,
   ],
-  providers: [PersonaService, EducacionService, ProyectoService, HabilidadService, ExperiencialaboralService, InfopersonalService],
+  providers: [PersonaService, EducacionService, ProyectoService, HabilidadService, ExperiencialaboralService, InfopersonalService, interceptorProvider],
   bootstrap: [AppComponent]
 
 })

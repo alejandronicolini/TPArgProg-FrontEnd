@@ -14,11 +14,11 @@ export class AddeducacionComponent implements OnInit {
   
   constructor(private router:Router, private serviceEduc:EducacionService) { }
   
-  ngOnInit(): void {
+  ngOnInit(): void { //OK
     this.educacion.img_logo= "../../../../assets/imagenes/imagen camara.png";
   }
 
-  Guardar(){
+  Guardar(){ //OK
     this.serviceEduc.createEducacion(this.educacion)
     .subscribe(data=>{
       alert("se agrego con exito");
@@ -26,7 +26,7 @@ export class AddeducacionComponent implements OnInit {
     })
   }
 
-  Cancelar(){
+  Cancelar(){ //OK
     this.educacion = null;
     this.router.navigate(["Home"]);
   }

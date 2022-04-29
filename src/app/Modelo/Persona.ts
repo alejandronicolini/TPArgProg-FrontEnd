@@ -9,8 +9,6 @@ export class Persona {
     nombre: string;
     apellido: string;
     email: string;
-    usuario: string;
-    password: string;
     expLaboralLista: ExperienciaLaboral[];
     educacionLista: Educacion[];
     habilidadesLista: Habilidades[];

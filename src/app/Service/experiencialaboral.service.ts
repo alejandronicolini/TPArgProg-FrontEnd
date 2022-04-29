@@ -1,3 +1,4 @@
+import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -9,10 +10,10 @@ import { ExperienciaLaboral } from '../Modelo/ExperienciaLaboral';
 
 export class ExperiencialaboralService {
 
+  Url= environment.tpUrl+"exp_laboral";
+  //Url='http://localhost:8080/exp_laboral';//ruta del proyecto backend en Java
+  
   constructor(private http:HttpClient) { }
-  
-  Url='http://localhost:8080/exp_laboral';//ruta del proyecto backend en Java
-  
   
   getlistaExpLaboral(){
     return this.http.get<ExperienciaLaboral[]>(this.Url+"/listado");

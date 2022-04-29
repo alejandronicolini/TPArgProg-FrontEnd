@@ -1,3 +1,4 @@
+import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -9,15 +10,17 @@ import { Educacion } from '../Modelo/Educacion';
 })
 export class EducacionService {
 
+  //ruta del backend
+  Url= environment.tpUrl+"educacion";//ruta del proyecto backend en Java
+  //Url='http://localhost:8080/educacion';
+  
   //definimos en el constructor el HttpClient para conectarnos al backend por REST(web service)
   constructor(private http:HttpClient) { }
   
-  //ruta del backend
-  Url='http://localhost:8080/educacion';//ruta del proyecto backend en Java
   
   // metodo para obtener datos de las personas del backend
   
-  getlistaEducacion(){
+  getlistaEducacion(): Observable<Educacion[]> {
     return this.http.get<Educacion[]>(this.Url+"/listado");
   }
 

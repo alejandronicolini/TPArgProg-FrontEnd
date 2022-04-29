@@ -1,3 +1,4 @@
+import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Persona } from '../Modelo/Persona';
@@ -6,12 +7,13 @@ import { Persona } from '../Modelo/Persona';
   providedIn: 'root'
 })
 export class PersonaService {
+  
+  //ruta del backend
+  Url= environment.tpUrl+"personas";
+  //Url = 'http://localhost:8080/personas';
 
   //definimos en el constructor el HttpClient para conectarnos al backend por REST(web service)
   constructor(private http: HttpClient) { }
-
-  //ruta del backend
-  Url = 'http://localhost:8080/personas';//ruta del proyecto backend en Java
 
   // metodo para obtener datos de las personas del backend
   getPersonas() {
@@ -45,9 +47,10 @@ export class PersonaService {
     return this.http.post<Persona>(`${this.Url}/login`, persona, httpOptions);
   } */
 
-  loginService(persona: Persona) {
+  //usado el inicio del Proyecto
+  /* loginService(persona: Persona) {
     return this.http.post<Persona>(`${this.Url}/login`, persona);
-  }
+  } */
 
 
 }

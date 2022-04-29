@@ -1,8 +1,10 @@
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Habilidades } from 'src/app/Modelo/Habilidades';
 import { HabilidadService } from 'src/app/Service/habilidad.service';
+import { TokenService } from 'src/app/Service/token.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-listarhabilidad',
@@ -13,21 +15,18 @@ export class ListarhabilidadComponent implements OnInit {
 
   listaHabilidades: Habilidades[];
   usuario: string;
-  visible: boolean;
+  visible: boolean = false;
 
-  constructor(private serviceHabilidad: HabilidadService, private router: Router) { }
+  @ViewChild('closebutton') closebutton: ElementRef;
+
+  constructor(private serviceHabilidad: HabilidadService, private router: Router, private tokenService: TokenService) { }
 
   ngOnInit(): void {
-     this.serviceHabilidad.getlistaHabilidades()
+    this.serviceHabilidad.getlistaHabilidades()
       .subscribe(data => { this.listaHabilidades = data; })
 
-      this.usuario = localStorage.getItem("user");
-      if (this.usuario == "admin") {
-        this.visible = true;
-      } else {
-        this.visible = false;
-      }
-      
+    this.visible = this.tokenService.isAdmin();
+
   }
 
   Nuevo() {
@@ -41,11 +40,27 @@ export class ListarhabilidadComponent implements OnInit {
   }
 
   Delete(objHab: Habilidades) {
-    this.serviceHabilidad.deleteHabilidad(objHab)
-       .subscribe(data => {
-        this.listaHabilidades = this.listaHabilidades.filter(p => p !== objHab);
-        alert("Habilidad eliminada....");
-      })
+    Swal.fire({
+      title: 'Esta seguro?',
+      text: "Esta a punto de eliminar un registro!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, Eliminar!'
+    }).then((result) => {
+      if (result.value) {
+        this.serviceHabilidad.deleteHabilidad(objHab)
+          .subscribe(data => {
+            this.listaHabilidades = this.listaHabilidades.filter(p => p !== objHab);
+            Swal.fire(
+              'Eliminado!',
+              'El registro ha sido eliminado.',
+              'success'
+            )
+          })
+      }
+    })
   }
 
   onDropped(event: CdkDragDrop<any>) {
