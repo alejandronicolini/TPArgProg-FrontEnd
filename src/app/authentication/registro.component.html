@@ -1,6 +1,6 @@
 <p>registro works!</p>
 
-<!-- No lo uso -->
+<!-- No lo uso, ya que no implemente la creacion de nuevos usuarios, a demas del usuario Admin -->
 <app-navbar></app-navbar>
 
 <div class="container d-flex justify-content-center">
@@ -36,7 +36,7 @@
           <input type="text" name="email" id="email" class="form-control" [(ngModel)]="email" required>
         </div>
         <div class="form-group">
-          <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">
+          <button class="btn btn-outline-success btn-block" [disabled]="!f.valid" type="submit">
             <i class="fas fa-sign-in-alt"></i> Crear Cuenta</button>
         </div>
       </form>

@@ -15,12 +15,12 @@ export class TokenService {
   constructor( private router: Router) { }
 
   public setToken(token: string): void {
-    window.localStorage.removeItem(TOKEN_KEY);
-    window.localStorage.setItem(TOKEN_KEY, token);
+    window.sessionStorage.removeItem(TOKEN_KEY);
+    window.sessionStorage.setItem(TOKEN_KEY, token);
   }
 
   public getToken(): string {
-    return localStorage.getItem(TOKEN_KEY);
+    return sessionStorage.getItem(TOKEN_KEY);
   }
 
   public isLogged(): boolean {
@@ -58,7 +58,7 @@ export class TokenService {
   }
 
   public logOut(): void {
-    window.localStorage.clear();
+    window.sessionStorage.clear();
     this.router.navigate(['/login']);
   }
 }

@@ -16,16 +16,16 @@
     <div class="list-group" cdkDropList (cdkDropListDropped)="onDropped($event)">
         <div class="" *ngFor="let elemProy of listaProyectos" cdkDrag>
 
-            <div class="row g-0 shadow-sm p-3 mb-4 bg-body rounded">
+            <div class="row row-cols-2 g-0 shadow-sm p-3 mb-4 bg-body rounded">
 
-                <div class="col-md-11  proyectos">
+                <div class="col-11  proyectos">
                     <div class="card-body">
                         <h4 class="card-title">{{elemProy.nombre}}</h4>
                         <p class="card-text">{{elemProy.descripcion}}</p>
                     </div>
                 </div>
 
-                <div class="col-md-1 row justify-content-end" *ngIf="visible">
+                <div class="col-1 row justify-content-end" *ngIf="visible">
                     <button type="button" class="btn btn-link" (click)="Editar(elemProy)" data-bs-placement="top"
                         title="Editar"><i class="fa fa-pen"></i></button>
                     <button type="button" class="btn btn-link" (click)="Delete(elemProy)" data-bs-placement="top"

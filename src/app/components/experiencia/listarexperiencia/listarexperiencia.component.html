@@ -15,7 +15,7 @@
         </div>
 
 
-        <div class="col-md-9">
+        <div class="col-md-9 col-sm-10">
           <div class="card-body">
             <h5 class="card-title">{{elemExpLab.puesto}}</h5>
             <p class="card-text">{{elemExpLab.empresa}}</p>
@@ -23,7 +23,7 @@
                 {{elemExpLab.fecha_fin}}</small></p>
           </div>
         </div>
-        <div class="col-md-1 row justify-content-end" *ngIf="visible">
+        <div class="col-md-1 col-sm-2 row justify-content-end" *ngIf="visible">
           <button type="button" class="btn btn-link" (click)="Editar(elemExpLab)" data-bs-placement="top"
             title="Editar"><i class="fa fa-pen"></i></button>
           <button type="button" class="btn btn-link" (click)="Delete(elemExpLab)" data-bs-placement="top"
