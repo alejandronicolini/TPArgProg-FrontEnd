@@ -14,6 +14,8 @@ import { MainComponent } from './main/main.component';
 import { UsuariologinComponent } from './authentication/usuariologin.component';
 //import { RegistroComponent } from './authentication/registro.component';
 import { AuthGuardService } from './guards/auth-guard.service';
+import { CoverComponent } from './components/cover/cover.component';
+
 
 
 
@@ -33,6 +35,7 @@ const routes: Routes = [
   {path:'add-explaboral', component:AddexperienciaComponent, canActivate: [AuthGuardService], data: { expectedRol: ['admin', 'user'] }},
   {path:'edit-explaboral',component:EditexperienciaComponent, canActivate: [AuthGuardService], data: { expectedRol: ['admin', 'user'] }},
   {path:'infopersonal', component:InfopersonalComponent, canActivate: [AuthGuardService], data: { expectedRol: ['admin', 'user'] }},
+  {path:'interes', component:CoverComponent},
   
 
   {path: 'login', component: UsuariologinComponent},

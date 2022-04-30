@@ -1,9 +1,34 @@
 <div class="card mat-card">
-  <div><img id="img_portada" src="../../../assets/imagenes/fondo.jpg"></div>
+  <!-- <div><img id="img_portada" src="../../../assets/imagenes/fondo.jpg"></div>
+  <div id="sesion">Sesion: {{sesion}}</div> -->
+
+  <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img id="img_portada" src="../../../assets/imagenes/fondo.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img id="img_portada" src="../../../assets/imagenes/fondo 1.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img id="img_portada" src="../../../assets/imagenes/fondo 2.jpg" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+    
+  </div>
+
   <div id="sesion">Sesion: {{sesion}}</div>
 
   <div class="secciones">
-
+    
     <div id="foto-perfil">
       <img class="imagen-perfil" src="../../../assets/imagenes/foto perfil.jpg">
 
@@ -11,62 +36,83 @@
         <!-- <a href=""   (click)="Editar(persona)"><i class="fa fa-pen"></i></a> -->
         <button type="button" class="btn btn-link" (click)="Editar(persona)" *ngIf="visible"><i
             class="fa fa-pen"></i></button>
-            <div *ngIf="!visible">
-              <br>
-            </div>
-      </div>
-
-    </div>
-
-    <div id="info-data">
-      <div>
-        <h1>{{persona.nombre}} {{persona.apellido}}</h1>
-        <h5>{{infoPersonal.puesto_actual}}</h5>
-        <div id="info-contact">
-          <span>Buenos Aires (Argentina) </span>
-          <span><a href="#">Información de contacto</a></span>
+        <div *ngIf="!visible">
+          <br>
         </div>
       </div>
 
-
-      <ul id="info-details">
-        <li><a href="#">
-            <img id="info-company-img"            
-              src="https://convocatorias.conicet.gov.ar/wp-content/uploads/logo-CONICET_opt.png">
-            <h2 id="info-company-name">ORGANIZACION</h2>
-          </a>
-        </li>
-        <li><a href="#">
-            <img id="info-school-img" src="https://inerciacero.files.wordpress.com/2011/07/logo-uba.png">
-            <h2 id="info-school-name">Nombre de la Universidad</h2>
-          </a>
-        </li>
-
-      </ul>
-
     </div>
 
-    <div id="btn-group">
-      <button type="button" class="btn btn-outline-primary">Tengo interés en</button>
+    <div id="info-data" class="container-fluid">
+      <div class="row">
 
-      <button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown"
-        aria-expanded="false" data-bs-placement="top" title="Agregar Información">
-        Añadir Info
-      </button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="/add-explaboral">Experiencia</a></li>
-        <li><a class="dropdown-item" href="/add-educacion">Educacion</a></li>
-        <li><a class="dropdown-item" href="/add-proyecto">Proyectos</a></li>
-        <li><a class="dropdown-item" href="/add-habilidad">Habilidades</a></li>
-        <li>
-          <hr class="dropdown-divider">
-        </li>
-        <li><a class="dropdown-item" href="/infopersonal">Editar Datos Personales</a></li>
-      </ul>
+        <div class="col">
+          <h1>{{persona.nombre}} {{persona.apellido}}</h1>
+          <h5>{{infoPersonal.puesto_actual}}</h5>
+          <div id="info-contact">
+            <span>Buenos Aires (Argentina) </span>
+            <span><a href="#">Información de contacto</a></span>
+          </div>
 
-      <!-- <button type="button" class="btn btn-outline-primary">Añadir Sección</button>
-      <button type="button" class="btn btn-outline-primary">Más</button> -->
+          <div id="btn-group">
+            <button type="button" class="btn btn-outline-primary" routerLink="/interes">Tengo interés en</button>
+            <button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown"
+              aria-expanded="false" data-bs-placement="top" title="Agregar Información">
+              Añadir Info
+            </button>
 
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/add-explaboral">Experiencia</a></li>
+              <li><a class="dropdown-item" href="/add-educacion">Educacion</a></li>
+              <li><a class="dropdown-item" href="/add-proyecto">Proyectos</a></li>
+              <li><a class="dropdown-item" href="/add-habilidad">Habilidades</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="/infopersonal">Editar Datos Personales</a></li>
+            </ul>
+
+            <!-- <button type="button" class="btn btn-outline-primary">Añadir Sección</button>
+            <button type="button" class="btn btn-outline-primary">Más</button> -->
+
+          </div>
+        </div>
+
+        <div class="col-md-6">
+
+          <div class="row row-cols-2 g-0">
+
+            <div class="row g-0">
+              <div class="col-sm-2">
+                <a href="https://www.argentina.gob.ar/produccion/transformacion-digital-y-economia-del-conocimiento/argentina-programa"
+                  target="_blank">
+                  <img src="./../../../assets/imagenes/argentina-programa logo cabecera.jpg" class="img-fluid rounded"
+                    alt="...">
+                </a>
+              </div>
+              <div class="col-sm-9 ms-2">
+                <h5 class="card-title">Certificación #YoProgramo</h5>
+                <p class="card-text">Programador Web Full-Stack junion</p>
+              </div>
+            </div>
+
+            <div class="row g-0">
+              <div class="col-sm-2">
+                <a href="https://www.argentina.gob.ar/produccion" target="_blank">
+                  <img src="./../../../assets/imagenes/escudo Arg.png" class="img-fluid rounded" alt="...">
+                </a>
+              </div>
+              <div class="col-sm-9 ms-2">
+                <h5 class="card-title">Ministerio de Desarrollo Productivo </h5>
+                <p class="card-text">Plan ARGENTINA PROGRAMA</p>
+              </div>
+            </div>
+            
+          </div>
+
+        </div>
+
+      </div>
 
     </div>
 
