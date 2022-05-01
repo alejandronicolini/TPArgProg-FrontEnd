@@ -9,9 +9,10 @@ export class MainComponent implements OnInit {
 
   /* usuario: string;
   visible: boolean; */
- 
+
 
   constructor() { }
+
 
   ngOnInit(): void {
     /* this.usuario = localStorage.getItem("user");
@@ -26,11 +27,9 @@ export class MainComponent implements OnInit {
       this.invitado = true;
     } */
 
-    
-
   }
 
-  
+
 
 
 }

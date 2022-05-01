@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Proyectos } from 'src/app/Modelo/Proyectos';
 import { ProyectoService } from 'src/app/Service/proyecto.service';
 
@@ -12,7 +12,7 @@ export class AddproyectoComponent implements OnInit {
 
   proyecto:Proyectos = new Proyectos();
   
-  constructor(private router:Router, private serviceProy:ProyectoService) { }
+  constructor(private serviceProy:ProyectoService, private router:Router, private route:ActivatedRoute ) {}
 
   ngOnInit(): void {
   }
@@ -27,7 +27,13 @@ export class AddproyectoComponent implements OnInit {
 
   Cancelar(){
     this.proyecto = null;
-    this.router.navigate(["Home"]);
+    this.router.navigate(['../proyectos'], {relativeTo: this.route});
+    //this.viewportScroller.scrollToAnchor('/Home#ale');
+
+    //window.location.reload();
+    //this.router.navigate(['/Home'], { fragment: 'ale' });
+
+    /*  this.router.navigate(["Home"]); */
   }
 
 }

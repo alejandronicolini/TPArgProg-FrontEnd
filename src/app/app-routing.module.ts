@@ -1,3 +1,4 @@
+import { EducacionComponent } from './../../../TPArgPrograma/src/app/components/educacion/educacion.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddeducacionComponent } from './components/educacion/addeducacion/addeducacion.component';
@@ -24,6 +25,13 @@ import { CoverComponent } from './components/cover/cover.component';
 const routes: Routes = [
   {path:'',redirectTo:'Home',pathMatch:'full'},
   {path: 'Home', component: MainComponent},
+  {path: 'Home',component: MainComponent,
+    children: [
+      {path: 'educacion',component: EducacionComponent},
+      {path: 'experiencia',component: EducacionComponent},
+      {path: 'habilidades',component: EducacionComponent},
+      {path: 'proyectos',component: EducacionComponent},
+    ]},
   
   {path:'add-educacion', component:AddeducacionComponent, canActivate: [AuthGuardService], data: { expectedRol: ['admin', 'user'] }}, 
   {path:'edit-educacion', component:EditeducacionComponent, canActivate: [AuthGuardService], data: { expectedRol: ['admin', 'user'] }},
@@ -45,7 +53,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled',
+  anchorScrolling: 'enabled', scrollOffset: [0, 25]})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
