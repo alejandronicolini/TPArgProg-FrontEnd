@@ -1,6 +1,5 @@
-import { EducacionComponent } from './../../../TPArgPrograma/src/app/components/educacion/educacion.component';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 import { AddeducacionComponent } from './components/educacion/addeducacion/addeducacion.component';
 import { EditeducacionComponent } from './components/educacion/editeducacion/editeducacion.component';
 import { AddexperienciaComponent } from './components/experiencia/addexperiencia/addexperiencia.component';
@@ -18,20 +17,11 @@ import { AuthGuardService } from './guards/auth-guard.service';
 import { CoverComponent } from './components/cover/cover.component';
 
 
-
-
 //Guard habilida el acceso al componente segun una ondicion de autenticacion
 
 const routes: Routes = [
   {path:'',redirectTo:'Home',pathMatch:'full'},
   {path: 'Home', component: MainComponent},
-  {path: 'Home',component: MainComponent,
-    children: [
-      {path: 'educacion',component: EducacionComponent},
-      {path: 'experiencia',component: EducacionComponent},
-      {path: 'habilidades',component: EducacionComponent},
-      {path: 'proyectos',component: EducacionComponent},
-    ]},
   
   {path:'add-educacion', component:AddeducacionComponent, canActivate: [AuthGuardService], data: { expectedRol: ['admin', 'user'] }}, 
   {path:'edit-educacion', component:EditeducacionComponent, canActivate: [AuthGuardService], data: { expectedRol: ['admin', 'user'] }},
@@ -44,17 +34,21 @@ const routes: Routes = [
   {path:'edit-explaboral',component:EditexperienciaComponent, canActivate: [AuthGuardService], data: { expectedRol: ['admin', 'user'] }},
   {path:'infopersonal', component:InfopersonalComponent, canActivate: [AuthGuardService], data: { expectedRol: ['admin', 'user'] }},
   {path:'interes', component:CoverComponent},
-  
 
   {path: 'login', component: UsuariologinComponent},
   /* {path: 'registro', component: RegistroComponent}, */
 
-
 ];
 
+
+const routerOptions: ExtraOptions = {
+  scrollPositionRestoration: 'enabled',
+  anchorScrolling: 'enabled',
+  scrollOffset: [0, 64]
+};
+
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled',
-  anchorScrolling: 'enabled', scrollOffset: [0, 25]})],
+  imports: [RouterModule.forRoot(routes, routerOptions)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

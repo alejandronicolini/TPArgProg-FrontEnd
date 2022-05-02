@@ -39,6 +39,7 @@ import { interceptorProvider } from './interceptors/educ-interceptor.service';
 import { FooterComponent } from './components/footer/footer.component';
 import { CoverComponent } from './components/cover/cover.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
