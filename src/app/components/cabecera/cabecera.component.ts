@@ -5,6 +5,7 @@ import { Persona } from 'src/app/Modelo/Persona';
 import { InfopersonalService } from 'src/app/Service/infopersonal.service';
 import { PersonaService } from 'src/app/Service/persona.service';
 import { TokenService } from 'src/app/Service/token.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cabecera',
@@ -48,5 +49,22 @@ export class CabeceraComponent implements OnInit {
     localStorage.setItem("id_persona",persona.id_persona.toString());
     this.router.navigate(["edit-persona"]);
   }
+
+
+  InfoContacto():void{
+    Swal.fire({
+      icon: 'info',
+      title: this.persona.nombre+" "+this.persona.apellido,
+      html: "<b>Email: </b>"+this.persona.email+'<br>'+"<b>Teléfono: </b>"+this.infoPersonal.telefono,
+      
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown'
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOutUp'
+      }
+    })
+  }
+
 
 }

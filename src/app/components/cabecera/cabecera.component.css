@@ -24,6 +24,7 @@
     justify-content: space-between;
 } */
 
+
 #sesion {
     display: inline-block;
     position: absolute;
@@ -33,7 +34,13 @@
     color: rgb(230, 199, 22);
 }
 
-#info-contact a {
+/* #info-contact a {
+    color: #0a66c2;
+    touch-action: manipulation;
+    text-decoration: none;
+} */
+
+#info-contact button {
     color: #0a66c2;
     touch-action: manipulation;
     text-decoration: none;

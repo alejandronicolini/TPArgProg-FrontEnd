@@ -11,28 +11,36 @@
         <h3>{{listaProyectos.length}}</h3>
         <span class="project-title">
             <h3>Proyectos</h3>
-        </span>
+        </span> 
+        <input type="range" [(ngModel)]="columnas" min="1" max="3">
     </div>
-    <div class="list-group" cdkDropList (cdkDropListDropped)="onDropped($event)">
-        <div class="" *ngFor="let elemProy of listaProyectos" cdkDrag>
 
-            <div class="row row-cols-2 g-0 shadow-sm p-3 mb-4 bg-body rounded">
 
-                <div class="col-11  proyectos">
-                    <div class="card-body">
-                        <h4 class="card-title">{{elemProy.nombre}}</h4>
-                        <p class="card-text">{{elemProy.descripcion}}</p>
+    <div class="container-fluid">
+
+        <div class="row row-cols-{{columnas}}" cdkDropList (cdkDropListDropped)="onDropped($event)">
+
+            <div class="card mb-3 border-0" *ngFor="let elemProy of listaProyectos" cdkDrag>
+
+                <div class="row row-cols-2 g-0 shadow-sm p-3 mb-4 bg-body rounded">
+
+                    <div class="col-11  proyectos">
+                        <div class="card-body">
+                            <h4 class="card-title">{{elemProy.nombre}}</h4>
+                            <p class="card-text">{{elemProy.descripcion}}</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="col-1 row justify-content-end" *ngIf="visible">
-                    <button type="button" class="btn btn-link" (click)="Editar(elemProy)" data-bs-placement="top"
-                        title="Editar"><i class="fa fa-pen"></i></button>
-                    <button type="button" class="btn btn-link" (click)="Delete(elemProy)" data-bs-placement="top"
-                        title="Eliminar"><i class="fa-solid fa-trash-can"></i></button>
+                    <div class="col-1 row justify-content-end" *ngIf="visible">
+                        <button type="button" class="btn btn-link" (click)="Editar(elemProy)" data-bs-placement="top"
+                            title="Editar"><i class="fa fa-pen"></i></button>
+                        <button type="button" class="btn btn-link" (click)="Delete(elemProy)" data-bs-placement="top"
+                            title="Eliminar"><i class="fa-solid fa-trash-can"></i></button>
+                    </div>
+
                 </div>
 
             </div>
-
         </div>
     </div>
+</div>

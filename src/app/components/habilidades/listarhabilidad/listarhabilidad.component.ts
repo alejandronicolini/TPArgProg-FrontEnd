@@ -16,6 +16,7 @@ export class ListarhabilidadComponent implements OnInit {
   listaHabilidades: Habilidades[];
   usuario: string;
   visible: boolean = false;
+  columnas: number = 1;
 
   @ViewChild('closebutton') closebutton: ElementRef;
 

@@ -17,6 +17,7 @@ export class ListarexperienciaComponent implements OnInit {
   listaExpLaboral: ExperienciaLaboral[];
   usuario: string;
   visible: boolean = false;
+  columnas: number = 1;
 
   constructor(private serviceExpLaboral: ExperiencialaboralService, private router: Router, private tokenService: TokenService) { }
 

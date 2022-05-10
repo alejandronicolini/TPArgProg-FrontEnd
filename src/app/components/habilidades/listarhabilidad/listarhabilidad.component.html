@@ -1,58 +1,51 @@
-<div class="card mat-card">
+<div class="card mat-card" id="habilidades">
 
   <div class="card-titles">
     <h2>Hard Skills & Soft Skills</h2><span><small class="text-muted">drag and drop</small></span>
+
     <div class="btn-edit" *ngIf="visible">
       <button type="button" class="btn-right btn btn-link " (click)="Nuevo()" data-bs-placement="top" title="Agregar"><i
           class="fas fa-plus-circle fa-2x"></i></button>
     </div>
   </div>
 
-  <!-- <ul class="items-list" *ngFor="let elemHab of listaHabilidades">
+  <div class="float-start"><input type="range" [(ngModel)]="columnas" min="1" max="2"></div>
 
-    <li >
-      <div class="aptitude-info">
-        <h6>{{elemHab.habilidad}}</h6>
-        <div class="progress">
-          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 25%"
-            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-        </div>
-        <p>Nombre del referente de contacto que han validado esta aptitud: <span>rrrrrr</span></p>
-      </div>
-    </li>
+  <div class="container-fluid">
 
-  </ul> -->
+    <div class="row row-cols-{{columnas}}" cdkDropList (cdkDropListDropped)="onDropped($event)">
 
-  <div class="" cdkDropList (cdkDropListDropped)="onDropped($event)">
+      <div class="card mb-3 border-0" *ngFor="let elemHab of listaHabilidades" cdkDrag>
 
-    <div class="items-list" *ngFor="let elemHab of listaHabilidades" cdkDrag>
-      <div class="row g-0">
+        <div class="row g-0">
 
-        <div class="col-md-2">
-          <img src={{elemHab.img_logo}} class="rounded" width="100px">
-        </div>
-
-        <div class="col-md-10 justify-content-center">
-
-          <h6>{{elemHab.habilidad}}</h6>
-
-          <div class="progress col-md-11">
-
-            <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
-              style="width: {{elemHab.conocimiento}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          <div class="col-md-2">
+            <img src={{elemHab.img_logo}} class="rounded" width="100px">
           </div>
 
-          <div class="col-md-1 float-end" *ngIf="visible">
-            <button type="button" class="btn btn-link" id="boton" (click)="Editar(elemHab)" data-bs-placement="top"
-              title="Editar"><i class="fa fa-pen"></i></button>
-            <button type="button" class="btn btn-link" id="boton" (click)="Delete(elemHab)" data-bs-placement="top"
-              title="Eliminar"><i class="fa-solid fa-trash-can"></i></button>
+          <div class="col-md-10 justify-content-center">
+            <h6>{{elemHab.habilidad}}<span><small class="text-muted"> {{elemHab.conocimiento}} %</small></span></h6>
+
+            <div class="progress col-md-11">
+              <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
+                style="width: {{elemHab.conocimiento}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+
+            <div class="col-md-1 float-end" *ngIf="visible">
+              <button type="button" class="btn btn-link" id="boton" (click)="Editar(elemHab)" data-bs-placement="top"
+                title="Editar"><i class="fa fa-pen"></i></button>
+              <button type="button" class="btn btn-link" id="boton" (click)="Delete(elemHab)" data-bs-placement="top"
+                title="Eliminar"><i class="fa-solid fa-trash-can"></i></button>
+            </div>
+
           </div>
 
         </div>
 
       </div>
+      
     </div>
+
   </div>
 
 </div>

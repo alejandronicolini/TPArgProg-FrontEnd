@@ -13,7 +13,12 @@ section {
 }
 
 .cover-container {
-  max-width: 42em;
+  max-width: 55em;
+}
+
+article p{
+  /* text-justify: distribute; */
+  text-align: justify;
 }
 
 

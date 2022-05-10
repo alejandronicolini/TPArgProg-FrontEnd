@@ -16,6 +16,7 @@ export class ListarproyectoComponent implements OnInit {
   listaProyectos: Proyectos[];
   usuario: string;
   visible: boolean = false;
+  columnas: number = 1;
 
 
   constructor(private serviceProy: ProyectoService, private router: Router, private tokenService: TokenService) { }

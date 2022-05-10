@@ -12,9 +12,14 @@
                     <input [(ngModel)]="habilidad.habilidad" name="habilidad" type="text" class="form-control">
                 </div>
 
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="">Porcentaje de conocimiento (0% - 100%) </label>
                     <input [(ngModel)]="habilidad.conocimiento" name="conocimiento" type="number" class="form-control">
+                </div> -->
+
+                <div class="form-group">
+                    <label for="">Porcentaje de conocimiento (0% - 100%)</label>
+                    <div><strong>{{habilidad.conocimiento}} % -</strong> <button class="btn btn-success" type="button" (click)="Rango()">Rango</button> </div>
                 </div>
 
                 <div class="form-group">

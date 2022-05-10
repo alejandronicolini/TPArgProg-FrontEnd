@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Educacion } from 'src/app/Modelo/Educacion';
 import { EducacionService } from 'src/app/Service/educacion.service';
@@ -16,16 +16,16 @@ export class ListareducacionComponent implements OnInit {
   listaEducacion: Educacion[];
   usuario: string;
   visible: boolean = false;
-  
+  columnas: number = 1;
 
-  constructor(private serviceEduc: EducacionService, private router: Router, private tokenService: TokenService) { }
+  
+  constructor(private serviceEduc: EducacionService, private router: Router, private tokenService: TokenService) {}
 
   ngOnInit(): void {
     this.serviceEduc.getlistaEducacion()
       .subscribe(data => { this.listaEducacion = data; })
 
     this.visible = this.tokenService.isAdmin();
-
 
     //login previo
     /* this.usuario = localStorage.getItem("user");
@@ -43,7 +43,7 @@ export class ListareducacionComponent implements OnInit {
     this.router.navigate(["add-educacion"]);
   }
 
-  //NO lo uso con routerlink
+  //NO lo uso si incorporo routerlink
   Editar(objEduc: Educacion): void {
     localStorage.setItem("id_educacion", objEduc.id_educacion.toString());
     this.router.navigate(["edit-educacion"]);

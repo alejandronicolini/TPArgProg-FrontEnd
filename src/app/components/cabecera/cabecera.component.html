@@ -1,4 +1,4 @@
-<div class="card mat-card">
+<div class="card mat-card" id="cabecera">
   <!-- <div><img id="img_portada" src="../../../assets/imagenes/fondo.jpg"></div>
   <div id="sesion">Sesion: {{sesion}}</div> -->
 
@@ -22,7 +22,6 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
-    
   </div>
 
   <div id="sesion">Sesion: {{sesion}}</div>
@@ -51,7 +50,9 @@
           <h5>{{infoPersonal.puesto_actual}}</h5>
           <div id="info-contact">
             <span>Buenos Aires (Argentina) </span>
-            <span><a href="#">Información de contacto</a></span>
+            <span>
+              <button type="button" class="btn btn-link" (click)="InfoContacto()">Información de contacto</button>
+            </span>
           </div>
 
           <div id="btn-group">
@@ -60,7 +61,12 @@
               aria-expanded="false" data-bs-placement="top" title="Agregar Información">
               Añadir Info
             </button>
-
+            <button type="button" class="btn btn-link" title="Curriculum">
+              <a href="../../../assets/imagenes/CV Nicolini.pdf" download="CV Nicolini Alejandro" target="_blank">
+              <i class="fa-solid fa-file-pdf fa-2x"></i>
+            </a>
+            </button>
+            
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="/add-explaboral">Experiencia</a></li>
               <li><a class="dropdown-item" href="/add-educacion">Educacion</a></li>
@@ -92,7 +98,7 @@
               </div>
               <div class="col-sm-9 ms-2">
                 <h5 class="card-title">Certificación #YoProgramo</h5>
-                <p class="card-text">Programador Web Full-Stack junion</p>
+                <p class="card-text">Programador Web Full-Stack junior</p>
               </div>
             </div>
 

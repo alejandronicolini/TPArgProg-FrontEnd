@@ -9,39 +9,45 @@
     </div>
   </div>
 
-  <div class="list-group" cdkDropList (cdkDropListDropped)="onDropped($event)">
+  <input type="range" [(ngModel)]="columnas" min="1" max="3">
 
-    <div *ngFor="let elemEduc of listaEducacion" class="card mb-3 border-1 rounded-3" cdkDrag>
-      <div class="row g-0">
-        <div class="col-md-2">
-          <img src="{{elemEduc.img_logo}}" class="img-fluid rounded mx-auto d-block" alt="">
-        </div>
+  <div class="container-fluid">
 
+    <div class="row row-cols-{{columnas}}" cdkDropList (cdkDropListDropped)="onDropped($event)">
 
-        <div class="col-md-9 col-sm-10">
-          <div class="card-body">
-            <h5 class="card-title">{{elemEduc.institucion}}</h5>
-            <p class="card-text">{{elemEduc.titulo}}</p>
-            <p class="card-text"><small class="text-muted">{{elemEduc.fecha_inicio}} - {{elemEduc.fecha_fin}}</small>
-            </p>
+      <div *ngFor="let elemEduc of listaEducacion" class="card mb-3 border-1 rounded-3" cdkDrag>
+
+        <div class="row g-0">
+
+          <div class="col-md-2">
+            <img src="{{elemEduc.img_logo}}" class="img-fluid rounded mx-auto d-block" alt="">
           </div>
-        </div>
 
-        <div class="col-md-1 col-sm-2 row justify-content-end" *ngIf="visible">
-          <button type="button" class="btn btn-link" (click)="Editar(elemEduc)" data-bs-placement="top"
-            title="Editar"><i class="fa fa-pen"></i></button>
-          <button type="button" class="btn btn-link" (click)="Delete(elemEduc)" data-bs-placement="top"
-            title="Eliminar"><i class="fa-solid fa-trash-can"></i></button>
+          <div class="col-md-9 col-sm-10">
+            <div class="card-body">
+              <h5 class="card-title">{{elemEduc.institucion}}</h5>
+              <p class="card-text">{{elemEduc.titulo}}</p>
+              <p class="card-text"><small class="text-muted">{{elemEduc.fecha_inicio}} - {{elemEduc.fecha_fin}}</small>
+              </p>
+            </div>
+          </div>
 
-          <!-- boton con routerLink (alternativa)-->
-          <!-- <button type="button" class="btn btn-link" routerLink="/editar-educacion/{{elemEduc.id_educacion}}" data-bs-placement="top" title="Editar"><i class="fa fa-pen"></i></button> -->
+          <div class="col-md-1 col-sm-2 row justify-content-end" *ngIf="visible">
+            <button type="button" class="btn btn-link" (click)="Editar(elemEduc)" data-bs-placement="top"
+              title="Editar"><i class="fa fa-pen"></i></button>
+            <button type="button" class="btn btn-link" (click)="Delete(elemEduc)" data-bs-placement="top"
+              title="Eliminar"><i class="fa-solid fa-trash-can"></i></button>
+
+            <!-- boton con routerLink (alternativa)-->
+            <!-- <button type="button" class="btn btn-link" routerLink="/editar-educacion/{{elemEduc.id_educacion}}" data-bs-placement="top" title="Editar"><i class="fa fa-pen"></i></button> -->
+          </div>
 
         </div>
 
       </div>
-
+      
     </div>
-  </div>
 
+  </div>
 
 </div>
