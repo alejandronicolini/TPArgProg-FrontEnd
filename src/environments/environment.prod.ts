@@ -1,6 +1,13 @@
 export const environment = {
   production: true,
   //url del backend
-  tpUrl: 'https://argprograma-backend.herokuapp.com/',
-  authURL: 'https://argprograma-backend.herokuapp.com/auth/'
+
+  //Esta url tiene la DB de la aplicacion en Heroku (JawsDB)
+  /* tpUrl: 'https://argprograma-backend.herokuapp.com/',
+  authURL: 'https://argprograma-backend.herokuapp.com/auth/' */
+
+  //Esta url tiene la DB de la aplicacion en CleverCloud
+  tpUrl: 'https://argprograma-backend-dbcc.herokuapp.com/',
+  authURL: 'https://argprograma-backend-dbcc.herokuapp.com/auth/'
+  
 };

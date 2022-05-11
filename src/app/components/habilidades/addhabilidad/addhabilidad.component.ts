@@ -17,6 +17,7 @@ export class AddhabilidadComponent implements OnInit {
 
   ngOnInit(): void {
     this.habilidad.img_logo = "../../../../assets/imagenes/imagen camara.png";
+    this.habilidad.conocimiento = "0";
   }
 
   Guardar() {
